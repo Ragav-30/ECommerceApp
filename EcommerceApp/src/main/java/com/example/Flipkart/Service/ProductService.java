@@ -27,6 +27,17 @@ public class ProductService {
 		return productRepository.save(product);
 	}
 
+	public Product updateProduct(Long id, Product newproduct) {
+		return productRepository.findById(id).map(product -> {
+			product.setName(newproduct.getName());
+			product.setPrice(newproduct.getPrice());
+			product.setStock(newproduct.getStock());
+			product.setDescription(newproduct.getDescription());
+			return product;
+		}).orElseThrow(() -> new RuntimeException("Id not found"));
+
+	}
+
 	public Product findById(Long id) {
 		Optional<Product> userOptional = productRepository.findById(id);
 		return userOptional.orElse(null);
