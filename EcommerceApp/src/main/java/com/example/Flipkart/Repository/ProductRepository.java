@@ -9,5 +9,5 @@ import com.example.Flipkart.Model.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-	List<Product> findByPriceAndStock(double price, int stock);
+	List<Product> findByPriceAndStock(Double price, Integer stock);
 }

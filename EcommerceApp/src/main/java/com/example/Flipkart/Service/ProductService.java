@@ -19,8 +19,8 @@ public class ProductService {
 		System.out.println("ProductService instantiated!");
 	}
 
-	public List<Product> getAllProducts(double price, int stock) {
-		if (price == 0) {
+	public List<Product> getAllProducts(Double price, Integer stock) {
+		if (stock == null || price == null) {
 			return productRepository.findAll();
 		} else {
 			return productRepository.findByPriceAndStock(price, stock);

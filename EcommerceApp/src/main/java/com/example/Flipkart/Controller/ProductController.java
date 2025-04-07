@@ -23,8 +23,8 @@ public class ProductController {
 	private ProductService productService;
 
 	@GetMapping("/getProducts")
-	public List<Product> getAllProducts(@RequestParam(value = "price", required = false) double price,
-			@RequestParam(value = "stock", required = false) int stock) {
+	public List<Product> getAllProducts(@RequestParam(value = "price", required = false) Double price,
+			@RequestParam(value = "stock", required = false) Integer stock) {
 
 		return productService.getAllProducts(price, stock);
 
